@@ -1,0 +1,94 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>{% block title %} {% endblock title %} | Vuesy - Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesdesign" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
+    {% block css %}
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+        <!-- Bootstrap Css -->
+        <link href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />  
+        
+       
+    {% endblock css %}
+</head>
+
+{% block body%}
+
+    <body data-layout="horizontal" data-topbar="dark">
+    
+{% endblock body %}
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        {% block topbar %}  
+        {% endblock topbar %}      
+
+        {% block sidebar %} 
+        {% endblock sidebar %} 
+
+        {% block horizontal %}
+        {% endblock horizontal %}  
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    {% block content %}
+
+                    {% endblock content %}
+
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+                {% block extra_content %}
+                {% endblock extra_content %}
+
+                {% block footer %}
+                    {% include "partials/footer.html" %}
+                {% endblock footer %}
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+  
+    {% block right_sidebar %}
+        {% include "partials/right-sidebar.html" %}
+    {% endblock right_sidebar %}
+
+
+    {% block javascript %}
+
+        <!-- JAVASCRIPT -->
+        <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'libs/metismenujs/dist/metismenujs.min.js' %}"></script>
+        <script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
+        <script src="{% static 'libs/feather-icons/dist/feather.min.js' %}"></script>
+
+        <script src="{% static 'js/app.js' %}"></script>
+
+        {% block extra_js %}
+        {% endblock extra_js %}
+
+    {% endblock javascript %}
+
+</body>
+</html>

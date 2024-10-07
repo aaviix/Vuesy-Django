@@ -1,0 +1,38 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %}Sales Dashboard {% endblock title %} 
+
+{% block extra_css %}
+
+    <!-- plugin css -->
+    <link href="{% static 'libs/jsvectormap/dist/css/jsvectormap.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="{% static 'libs/swiper/swiper-bundle.min.css' %}">
+
+{% endblock extra_css %}
+
+    {% block horizontal %}
+        {% include "partials/horizontal.html" with pagetitle="Dashboard" title="Welcome !" %}
+    {% endblock horizontal %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block extra_js %}
+
+    <!-- apexcharts -->
+    <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+
+    <!-- Vector map-->
+    <script src="{% static 'libs/jsvectormap/dist/js/jsvectormap.min.js' %}"></script>
+    <script src="{% static 'libs/jsvectormap/dist/maps/world-merc.js' %}"></script>
+
+    <!-- swiper js -->
+    <script src="{% static 'libs/swiper/swiper-bundle.min.js' %}"></script>
+    
+    <script src="{% static 'js/pages/dashboard.init.js' %}"></script>
+
+{% endblock extra_js %}
+    

@@ -1,0 +1,97 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Leaflet maps {% endblock title %}
+
+{% block extra_css %}
+
+    <!-- leaflet Css -->
+    <link href="{% static 'libs/leaflet/dist/leaflet.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock extra_css %}
+
+{% block horizontal %}
+    {% include "partials/horizontal.html" with pagetitle="Maps" title="Leaflet maps" %}
+{% endblock horizontal %}
+            
+{% block content %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Example</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Markers, Circles and Polygons</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map-marker" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Working with Popups</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map-popup" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Markers with Custom Icons</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map-custom-icons" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Interactive Choropleth Map</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map-interactive-map" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Layer Groups and Layers Control</h4>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div id="leaflet-map-group-control" class="leaflet-map"></div>
+                                    </div>
+                                </div>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+{% endblock content %}
+                   
+{% block extra_js %}
+
+    <!-- leaflet plugin -->
+    <script src="{% static 'libs/leaflet/dist/leaflet.js' %}"></script>
+
+    <!-- leaflet map.init -->
+    <script src="{% static 'js/pages/leaflet-us-states.js' %}"></script>
+    <script src="{% static 'js/pages/leaflet-map.init.js' %}"></script>
+
+{% endblock extra_js %}
+    

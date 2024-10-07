@@ -1,0 +1,54 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Font Awesome {% endblock title %}
+
+{% block horizontal %}
+    {% include "partials/horizontal.html" with pagetitle="Icons" title="Font Awesome" %}
+{% endblock horizontal %}
+        
+{% block content %}
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Solid</h4>
+                                         <a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=solid&m=free" target="_blank" class="btn btn-sm btn-secondary-subtle">Docs <i class="mdi mdi-arrow-right align-middle"></i></a>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div class="row icon-demo-content" id="solid">
+                                        </div>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card -->
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Regular</h4>
+                                         <a href="https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=regular&m=free" target="_blank" class="btn btn-sm btn-secondary-subtle">Docs <i class="mdi mdi-arrow-right align-middle"></i></a>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div class="row icon-demo-content" id="regular">
+                                        </div>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card -->
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Brands</h4>
+                                         <a href="https://fontawesome.com/v5.15/icons?d=gallery&p=3&s=brands" target="_blank" class="btn btn-sm btn-secondary-subtle">Docs <i class="mdi mdi-arrow-right align-middle"></i></a>
+                                     </div><!-- end card header -->
+                                    <div class="card-body">
+                                        <div class="row icon-demo-content" id="brand">
+                                        </div>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card -->
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+{% endblock content %}
+
+{% block extra_js %}
+
+    <!-- fontawesome icons init -->
+    <script src="{% static 'js/pages/fontawesome.init.js' %}"></script>
+
+{% endblock extra_js %}
+
+       

@@ -1,0 +1,58 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Form File Upload {% endblock title %} 
+
+{% block extra_css %}
+
+    <!-- Plugins css -->
+    <link href="{% static 'libs/dropzone/dist/min/dropzone.min.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock extra_css %}
+
+    {% block horizontal %}
+        {% include "partials/horizontal.html" with pagetitle="Forms" title="Form File Upload" %}
+    {% endblock horizontal %}
+        
+{% block content %}
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header justify-content-between d-flex align-items-center">
+                                    <h4 class="card-title">Dropzone</h4>
+                                </div><!-- end card header -->
+                                <div class="card-body">
+                                    <div>
+                                        <form action="#" class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple="multiple">
+                                            </div>
+                                            <div class="dz-message needsclick">
+                                                <div class="mb-3">
+                                                    <i class="display-4 text-muted uil uil-cloud-upload"></i>
+                                                </div>
+
+                                                <h4>Drop files here or click to upload.</h4>
+                                            </div>
+                                        </form>
+                                        <!-- end form -->
+                                    </div>
+
+                                    <div class="text-center mt-4">
+                                        <button type="button" class="btn btn-primary">Send
+                                            Files</button>
+                                    </div>
+                                </div>
+                            </div><!-- end card -->
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+{% endblock content %}
+              
+{% block extra_js %}
+
+    <!-- Plugins js -->
+    <script src="{% static 'libs/dropzone/dist/min/dropzone.min.js' %}"></script>
+
+{% endblock extra_js %}
+
+    

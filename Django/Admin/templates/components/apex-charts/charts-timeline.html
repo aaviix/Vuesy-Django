@@ -1,0 +1,68 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Timeline Charts {% endblock title %}
+
+{% block horizontal %}
+    {% include "partials/horizontal.html" with pagetitle="Charts" title="Timeline Charts" %}
+{% endblock horizontal %}
+        
+{% block content %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Basic TimeLine Charts</h4>
+                                     </div><!-- end card header --> 
+                                    <div class="card-body">                                        
+                                        <div id="basic_timeline" data-colors='["--bs-primary"]' class="apex-charts" dir="ltr"></div> 
+                                    </div><!-- end cardbody -->
+                                </div><!--end card-->
+                            </div><!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Different Color For Each Bar</h4>
+                                     </div><!-- end card header --> 
+                                    <div class="card-body">                                        
+                                        <div id="color_timeline" data-colors='["--bs-primary", "--bs-danger", "--bs-success", "--bs-warning", "--bs-info"]' class="apex-charts" dir="ltr"></div>
+                                    </div><!-- end cardbody -->
+                                </div><!--end card-->
+                            </div><!-- end col -->
+                        </div><!-- end row -->  
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Multi Series Timeline</h4>
+                                     </div><!-- end card header --> 
+                                    <div class="card-body">                                        
+                                        <div id="multi_series" data-colors='["--bs-primary","--bs-success"]' class="apex-charts" dir="ltr"></div>
+                                    </div>
+                                </div><!--end card-->
+                            </div><!-- end col -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header justify-content-between d-flex align-items-center">
+                                        <h4 class="card-title">Advanced Timeline (Multiple Range)</h4>
+                                     </div><!-- end card header --> 
+                                    <div class="card-body">                                        
+                                        <div id="advanced_timeline" data-colors='["--bs-primary", "--bs-success", "--bs-warning"]' class="apex-charts" dir="ltr"></div>
+                                    </div>
+                                </div><!--end card-->
+                            </div><!-- end col -->
+                        </div><!-- end row --> 
+{% endblock content %}
+                               
+{% block extra_js %}
+
+    <!-- apexcharts -->
+    <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+
+    <script src="{% static 'libs/moment/min/moment.min.js' %}"></script>
+
+    <!-- timeline charts init -->
+    <script src="{% static 'js/pages/apexcharts-timeline.init.js' %}"></script>
+
+{% endblock extra_js %}
+       
